@@ -69,6 +69,8 @@ class WelcomeScreen extends StatelessWidget {
                   delay: Duration(milliseconds: 500),
 
                   child: CustomButton(
+                            width: double.infinity,
+
                     backgroundColor: AppTheme.primayLight,
                     text: 'Create Account',
                     textColor: AppTheme.primayColor,
@@ -85,6 +87,8 @@ class WelcomeScreen extends StatelessWidget {
                   delay: Duration(milliseconds: 600),
 
                   child: CustomButton(
+                            width: double.infinity,
+
                     backgroundColor: AppTheme.primayColor,
                     text: 'Login',
                     onPressed: () {

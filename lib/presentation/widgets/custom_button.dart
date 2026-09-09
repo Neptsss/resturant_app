@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
     this.backgroundColor,
     this.textColor,
     this.width,
-     this.height = 50,
+     this.height = 40,
     this.borderRadius = 8,
     this.padding,
     this.prefixIcon,
@@ -38,7 +38,8 @@ class CustomButton extends StatelessWidget {
             foregroundColor: textColor ?? AppTheme.primayColor,
             side: BorderSide(color: backgroundColor ?? AppTheme.primayColor),
             padding: padding,
-            minimumSize: Size(width ?? double.infinity, height),
+            maximumSize: Size(width ?? double.infinity, height),
+            
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius),
             ),
@@ -47,7 +48,7 @@ class CustomButton extends StatelessWidget {
             backgroundColor: backgroundColor ?? AppTheme.primayColor,
             foregroundColor: textColor ?? AppTheme.white,
             padding: padding,
-            minimumSize: Size(width ?? double.infinity, height),
+            maximumSize: Size(width ?? double.infinity, height),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius),
             ),

@@ -229,6 +229,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: Align(
                           alignment : Alignment.center,
                           child: CustomButton(
+                            width: double.infinity,
                             text: 'Registration',
                             onPressed: _register,
                             isLoading: ap.registerStatus == FormStatus.submitting,

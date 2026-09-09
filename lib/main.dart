@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
 import 'package:restaurant_app/firebase_options.dart';
 import 'package:restaurant_app/presentation/providers/auth_providers.dart';
+import 'package:restaurant_app/presentation/providers/restaurant_provider.dart';
 import 'package:restaurant_app/presentation/screens/splash/splash_screen.dart';
-import 'package:restaurant_app/presentation/screens/welcome/welcome_screen.dart';
 import 'core/di/service_locator.dart' as di;
 
 Future<void> main() async {
@@ -25,6 +25,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => di.serviceLocator<AuthProvider>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.serviceLocator<RestaurantProvider>(),
         ),
       ],
       child: MaterialApp(

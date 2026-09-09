@@ -199,6 +199,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               child: Align(
                 alignment: Alignment.center,
                 child: CustomButton(
+                            width: double.infinity,
+
                   text: 'Submit',
                   onPressed: _resetPassword,
                   isLoading: ap.forgotPasswordStatus == FormStatus.submitting,

@@ -1,0 +1,595 @@
+{
+    "restaurants": [
+        {
+            "id": 1,
+            "name": "Abc Hotel & Resto",
+            "image": "https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -6.2088,
+            "longitude": 106.8456,
+            "address": "Pondok Indah",
+            "city": "Jakarta",
+            "description": "A luxurious hotel with excellent restaurant serving Indonesian and international cuisines.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "10:00 AM - 11:00 PM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "10:00 AM - 11:00 PM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "10:00 AM - 10:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Nasi Padang",
+                    "image": "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Nasi Padang Komplit + Lauk sepuasnya"
+                },
+                {
+                    "name": "Sate Ayam",
+                    "image": "https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Chicken satay with peanut sauce"
+                },
+                {
+                    "name": "Gado-Gado",
+                    "image": "https://images.pexels.com/photos/1213271/pexels-photo-1213271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Indonesian salad with peanut sauce"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "XYZ Resto",
+            "image": "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -7.7956,
+            "longitude": 110.3695,
+            "address": "Malioboro",
+            "city": "Yogyakarta",
+            "description": "A cozy restaurant offering traditional Javanese cuisines in the heart of Yogyakarta.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "10:00 AM - 1:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "10:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "10:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "10:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "10:00 AM - 9:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Gudeg Yogya",
+                    "image": "https://images.pexels.com/photos/5409010/pexels-photo-5409010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Traditional Javanese cuisine made from young jackfruit"
+                },
+                {
+                    "name": "Bakpia Pathok",
+                    "image": "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Sweet filled pastry originated from Yogyakarta"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Super Resto AC",
+            "image": "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -6.2385,
+            "longitude": 106.9299,
+            "address": "Senaya",
+            "city": "Jakarta",
+            "description": "Modern restaurant with air conditioning offering a wide range of Indonesian dishes.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "11:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "11:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "11:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "11:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "11:00 AM - 11:00 PM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "11:00 AM - 11:00 PM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "11:00 AM - 10:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Nasi Goreng",
+                    "image": "https://images.pexels.com/photos/723198/pexels-photo-723198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Indonesian fried rice"
+                },
+                {
+                    "name": "Mie Goreng",
+                    "image": "https://images.pexels.com/photos/2679501/pexels-photo-2679501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Indonesian fried noodles"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Resto Ku",
+            "image": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -6.2088,
+            "longitude": 106.8456,
+            "address": "Pondok Indah",
+            "city": "Jakarta",
+            "description": "A family-friendly restaurant with homemade dishes.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "10:00 AM - 12:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "10:00 AM - 12:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "10:00 AM - 12:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "10:00 AM - 12:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "10:00 AM - 12:00 PM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "10:00 AM - 12:00 PM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "10:00 AM - 12:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Nasi Padang",
+                    "image": "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Nasi Padang Komplit + Lauk sepuasnya"
+                },
+                {
+                    "name": "Rendang",
+                    "image": "https://images.pexels.com/photos/2313686/pexels-photo-2313686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Spicy beef dish slow-cooked in coconut milk"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Food Fast",
+            "image": "https://images.pexels.com/photos/1310777/pexels-photo-1310777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -6.2088,
+            "longitude": 106.8456,
+            "address": "Kemang",
+            "city": "Jakarta",
+            "description": "Fast food restaurant with quick service.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "8:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "8:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "8:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "8:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "8:00 AM - 11:00 PM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "8:00 AM - 11:00 PM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "8:00 AM - 10:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Burger",
+                    "image": "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Delicious beef burger with fries"
+                },
+                {
+                    "name": "Fried Chicken",
+                    "image": "https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Crispy fried chicken with special sauce"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Warung Sunda",
+            "image": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -6.9147,
+            "longitude": 107.6098,
+            "address": "Jl. Braga",
+            "city": "Bandung",
+            "description": "Authentic Sundanese restaurant with traditional atmosphere.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "10:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "10:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "10:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "10:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "10:00 AM - 10:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Nasi Timbel",
+                    "image": "https://images.pexels.com/photos/5836763/pexels-photo-5836763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Sundanese rice wrapped in banana leaf with various side dishes"
+                },
+                {
+                    "name": "Karedok",
+                    "image": "https://images.pexels.com/photos/5835353/pexels-photo-5835353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Traditional Sundanese vegetable salad with peanut sauce"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Sate House",
+            "image": "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -7.2575,
+            "longitude": 112.7521,
+            "address": "Jl. Tunjungan",
+            "city": "Surabaya",
+            "description": "Best satay restaurant in Surabaya with various types of satay.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "4:00 PM - 11:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "4:00 PM - 11:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "4:00 PM - 11:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "4:00 PM - 11:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "4:00 PM - 12:00 AM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "4:00 PM - 12:00 AM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "4:00 PM - 11:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Sate Kambing",
+                    "image": "https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Goat satay with special Surabaya-style sauce"
+                },
+                {
+                    "name": "Sate Ayam",
+                    "image": "https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Chicken satay with peanut sauce"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Bali Beach Grill",
+            "image": "https://images.pexels.com/photos/2347011/pexels-photo-2347011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -8.7095,
+            "longitude": 115.1782,
+            "address": "Jl. Legian",
+            "city": "Bali",
+            "description": "Beachfront restaurant with fresh seafood and great sunset views.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "12:00 PM - 11:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "12:00 PM - 11:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "12:00 PM - 11:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "12:00 PM - 11:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "12:00 PM - 12:00 AM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "12:00 PM - 12:00 AM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "12:00 PM - 11:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Grilled Seafood Platter",
+                    "image": "https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Assortment of grilled seafood including fish, prawns, and squid"
+                },
+                {
+                    "name": "Babi Guling",
+                    "image": "https://images.pexels.com/photos/8629091/pexels-photo-8629091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Traditional Balinese roasted suckling pig"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Coto Makassar",
+            "image": "https://images.pexels.com/photos/5175537/pexels-photo-5175537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -5.1477,
+            "longitude": 119.4327,
+            "address": "Jl. Somba Opu",
+            "city": "Makassar",
+            "description": "Famous for its authentic Coto Makassar, a traditional beef soup.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "7:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "7:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "7:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "7:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "7:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "7:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "7:00 AM - 9:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Coto Makassar",
+                    "image": "https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Traditional beef soup with rich spices and offal"
+                },
+                {
+                    "name": "Pallubasa",
+                    "image": "https://images.pexels.com/photos/1731535/pexels-photo-1731535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Another variation of beef soup with coconut milk"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Medan Culinary",
+            "image": "https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": 3.5894,
+            "longitude": 98.6739,
+            "address": "Jl. Semarang",
+            "city": "Medan",
+            "description": "Serving various North Sumatran delicacies with authentic flavors.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "9:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "9:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "9:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "9:00 AM - 9:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "9:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "9:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "9:00 AM - 9:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Soto Medan",
+                    "image": "https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Coconut milk-based beef soup with glass noodles"
+                },
+                {
+                    "name": "Bika Ambon",
+                    "image": "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Traditional honeycomb cake from Medan"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Malang Corner",
+            "image": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "latitude": -7.9797,
+            "longitude": 112.6304,
+            "address": "Jl. Ijen",
+            "city": "Malang",
+            "description": "Cozy restaurant with Malang specialties and fusion dishes.",
+            "opening_hours": [
+                {
+                    "day": "Monday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Tuesday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Wednesday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Thursday",
+                    "hours": "10:00 AM - 10:00 PM"
+                },
+                {
+                    "day": "Friday",
+                    "hours": "10:00 AM - 11:00 PM"
+                },
+                {
+                    "day": "Saturday",
+                    "hours": "10:00 AM - 11:00 PM"
+                },
+                {
+                    "day": "Sunday",
+                    "hours": "10:00 AM - 10:00 PM"
+                }
+            ],
+            "menu": [
+                {
+                    "name": "Bakso Malang",
+                    "image": "https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Famous beef meatball soup from Malang with various toppings"
+                },
+                {
+                    "name": "Pia Malang",
+                    "image": "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "description": "Traditional Malang pastry with various fillings"
+                }
+            ]
+        }
+    ],
+    "banners": [
+        {
+            "id": 1,
+            "image": "https://images.pexels.com/photos/1310777/pexels-photo-1310777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+            "id": 2,
+            "image": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+            "id": 3,
+            "image": "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+    ]
+}

@@ -193,6 +193,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Align(
                           alignment: Alignment.center,
                           child: CustomButton(
+                            width: double.infinity,
+
                             text: 'Login',
                             onPressed: _login,
                             isLoading:
