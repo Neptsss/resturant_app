@@ -1,6 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:restaurant_app/core/constants/app_theme.dart';
+import 'package:restaurant_app/firebase_options.dart';
+import 'package:restaurant_app/presentation/providers/auth_providers.dart';
+import 'package:restaurant_app/presentation/screens/splash/splash_screen.dart';
+import 'package:restaurant_app/presentation/screens/welcome/welcome_screen.dart';
+import 'core/di/service_locator.dart' as di;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await di.init();
   runApp(const MyApp());
 }
 
@@ -10,20 +21,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-      
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => di.serviceLocator<AuthProvider>(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: .fromSeed(seedColor: AppTheme.primayColor),
+        ),
+        home: SplashScreen(),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
 
   final String title;
 
@@ -36,11 +52,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }

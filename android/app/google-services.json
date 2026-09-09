@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "878458198915",
+    "project_id": "resto-booking-a830d",
+    "storage_bucket": "resto-booking-a830d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878458198915:android:13c551452f7802508374b6",
+        "android_client_info": {
+          "package_name": "com.example.restaurant_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs4DW2KOCfPYHsOLRRiW1iR1z487pw_dk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
