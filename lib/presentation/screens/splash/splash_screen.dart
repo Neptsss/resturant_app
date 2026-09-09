@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/animations/fade_animation.dart';
 import 'package:restaurant_app/core/animations/slide_animation.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
+import 'package:restaurant_app/presentation/providers/auth_providers.dart';
+import 'package:restaurant_app/presentation/screens/home/home_screen.dart';
 import 'package:restaurant_app/presentation/screens/welcome/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,9 +24,20 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _navigateToNextScreen() async {
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    if (authProvider.authStatus == AuthStatus.initial) {
+      await authProvider.checkAuthStatus();
+    }
+
     await Future.delayed(Duration(milliseconds: 3000));
+    final isLoggedIn = authProvider.authStatus == AuthStatus.authenticated;
+
     Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(builder: (context) => WelcomeScreen()),
+      MaterialPageRoute(
+        builder: (context) =>
+        isLoggedIn ? HomeScreen() :
+         WelcomeScreen(),
+      ),
       (route) => false,
     );
   }
@@ -53,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ),
               ),
-              SizedBox(height:30),
+              SizedBox(height: 30),
               FadeAnimation(
                 delay: Duration(milliseconds: 300),
                 child: SlideAnimation(

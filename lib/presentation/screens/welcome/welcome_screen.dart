@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/animations/fade_animation.dart';
 import 'package:restaurant_app/core/animations/slide_animation.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
+import 'package:restaurant_app/presentation/screens/auth/login_screen.dart';
 import 'package:restaurant_app/presentation/screens/auth/register_screen.dart';
 import 'package:restaurant_app/presentation/widgets/custom_button.dart';
 
@@ -86,7 +87,15 @@ class WelcomeScreen extends StatelessWidget {
                   child: CustomButton(
                     backgroundColor: AppTheme.primayColor,
                     text: 'Login',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+
+                    },
                   ),
                 ),
               ),
@@ -136,6 +145,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+          
             ],
           ),
         ),

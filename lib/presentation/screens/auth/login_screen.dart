@@ -4,33 +4,29 @@ import 'package:restaurant_app/core/animations/fade_animation.dart';
 import 'package:restaurant_app/core/animations/slide_animation.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
 import 'package:restaurant_app/presentation/providers/auth_providers.dart';
+import 'package:restaurant_app/presentation/screens/auth/forgot_password_screen.dart';
 import 'package:restaurant_app/presentation/screens/home/home_screen.dart';
 import 'package:restaurant_app/presentation/widgets/custom_button.dart';
 import 'package:restaurant_app/presentation/widgets/custom_form.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _confirmPasswordController = TextEditingController();
 
   bool _obsecurePassword = true;
-  bool _obsecureConfirmPassword = true;
 
   @override
   void dispose() {
-    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -40,22 +36,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     });
   }
 
-  void _toggleConfirmPasswordVisibility() {
-    setState(() {
-      _obsecureConfirmPassword = !_obsecureConfirmPassword;
-    });
-  }
-
-  Future<void> _register() async {
+  Future<void> _login() async {
     if (_formKey.currentState!.validate()) {
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
-   await authProvider.register(
-        _emailController.text,
-        _passwordController.text,
-        _nameController.text,
-      );
+      await authProvider.login(_emailController.text, _passwordController.text);
 
-      if (authProvider.registerStatus == FormStatus.succes) {
+      if (authProvider.loginStatus == FormStatus.succes) {
         if (mounted) {
           Navigator.pushAndRemoveUntil(
             context,
@@ -87,7 +73,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       FadeAnimation(
                         child: SlideAnimation(
                           child: Text(
-                            "Welcome",
+                            "Login",
                             style: TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
@@ -101,24 +87,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: SlideAnimation(
                           delay: Duration(milliseconds: 200),
                           child: Text(
-                            "Before enjoying services\nPlease register first",
+                            "Welcome Back Please Login To Continue",
                             style: TextStyle(fontSize: 12),
                           ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      FadeAnimation(
-                        delay: Duration(milliseconds: 400),
-                        child: CustomForm(
-                          controller: _nameController,
-                          hintText: "Full Name",
-                          prefixIcon: Icons.person_outline,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your name';
-                            }
-                            return null;
-                          },
                         ),
                       ),
                       SizedBox(height: 20),
@@ -165,41 +136,34 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                         ),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 10,),
                       FadeAnimation(
-                        delay: Duration(milliseconds: 500),
-                        child: CustomForm(
-                          controller: _confirmPasswordController,
-                          maxLines: 1,
-                          hintText: "Confirm Password",
-                          obsecureText: _obsecureConfirmPassword,
-                          prefixIcon: Icons.lock_outlined,
-                          suffixIcon: IconButton(
-                            onPressed: _toggleConfirmPasswordVisibility,
-                            icon: Icon(
-                              _obsecureConfirmPassword
-                                  ? Icons.visibility_off_outlined
-                                  : Icons.visibility_outlined,
-                              color: AppTheme.grey,
+                        delay: Duration(milliseconds: 200),
+                        child: SlideAnimation(
+                          delay: Duration(milliseconds: 200),
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        ForgotPasswordScreen(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                "Forgot Password ?",
+                                style: TextStyle(fontSize: 14, color:AppTheme.primayColor, fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your password';
-                            }
-                            if (value.length < 6) {
-                              return "Password must be at least 6 characters";
-                            }
-
-                            if (value != _passwordController.text) {
-                              return "Password do not match";
-                            }
-                            return null;
-                          },
                         ),
                       ),
-                      if (ap.registerStatus == FormStatus.error) SizedBox(height: 20),
-                      if (ap.registerStatus == FormStatus.error)
+                      if (ap.loginStatus == FormStatus.error)
+                        SizedBox(height: 20),
+                      if (ap.loginStatus == FormStatus.error)
                         FadeAnimation(
                           child: Container(
                             padding: EdgeInsets.all(8),
@@ -227,11 +191,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       FadeAnimation(
                         delay: Duration(milliseconds: 800),
                         child: Align(
-                          alignment : Alignment.center,
+                          alignment: Alignment.center,
                           child: CustomButton(
-                            text: 'Registration',
-                            onPressed: _register,
-                            isLoading: ap.registerStatus == FormStatus.submitting,
+                            text: 'Login',
+                            onPressed: _login,
+                            isLoading:
+                                ap.loginStatus == FormStatus.submitting,
                           ),
                         ),
                       ),
