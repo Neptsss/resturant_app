@@ -12,6 +12,7 @@ import 'package:restaurant_app/domain/usecase/auth/login_usecase.dart';
 import 'package:restaurant_app/domain/usecase/auth/register_usecase.dart';
 import 'package:restaurant_app/domain/usecase/auth_usecase.dart';
 import 'package:restaurant_app/domain/usecase/get_banner_usecase.dart';
+import 'package:restaurant_app/domain/usecase/get_restaurant_by_id_usecase.dart';
 import 'package:restaurant_app/domain/usecase/get_restaurant_usecase.dart';
 import 'package:restaurant_app/presentation/providers/auth_providers.dart';
 import 'package:restaurant_app/presentation/providers/restaurant_provider.dart';
@@ -74,6 +75,10 @@ Future<void> init() async {
     return GetBannerUsecase(serviceLocator());
   });
 
+  serviceLocator.registerLazySingleton(() {
+    return GetRestaurantByIdUsecase(serviceLocator());
+  });
+
   // Provider
   serviceLocator.registerFactory<AuthProvider>(() {
     return AuthProvider(authUsecase: serviceLocator());
@@ -83,6 +88,7 @@ Future<void> init() async {
     return RestaurantProvider(
       getRestaurantUsecase: serviceLocator(),
       getBannerUsecase: serviceLocator(),
+      getRestaurantByIdUsecase: serviceLocator(),
     );
   });
 }

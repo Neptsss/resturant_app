@@ -28,4 +28,13 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
       return Left(e.toString());
     }
   }
+  @override
+  Future<Either<String,Restaurant>> getRestaurantById(int id) async {
+    try {
+      final result = await localDataSource.getRestaurantById( id);
+      return Right(result);
+    } catch (e) {
+      return Left(e.toString());
+    }
+  }
 }

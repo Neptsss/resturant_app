@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
 import 'package:restaurant_app/domain/entities/restaurant.dart';
 import 'package:restaurant_app/presentation/providers/restaurant_provider.dart';
+import 'package:restaurant_app/presentation/screens/resto/detail_resto_screen.dart';
 import 'package:restaurant_app/presentation/widgets/custom_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -170,7 +171,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailRestoScreen(id: restaurant.id)));
+        },
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Row(
@@ -215,26 +218,37 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(height: 4),
                     Row(
                       children: [
-                          Icon(
+                        Icon(
                           Icons.location_on,
                           size: 16,
                           color: AppTheme.primayColor,
                         ),
-                    Expanded(
-                      child: Text(
-                        '${restaurant.address}, ${restaurant.city}',
-                        style: const TextStyle(fontSize: 14),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
+                        Expanded(
+                          child: Text(
+                            '${restaurant.address}, ${restaurant.city}',
+                            style: const TextStyle(fontSize: 14),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                       ],
                     ),
                   ],
                 ),
               ),
               const SizedBox(width: 12),
-              CustomButton(text: "Check", onPressed: () {}),
+              CustomButton(
+                text: "Check",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          DetailRestoScreen(id: restaurant.id),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),
