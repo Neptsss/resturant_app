@@ -40,17 +40,22 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppTheme.white,
       body: SafeArea(
-        child: Column(
-          children: [
-            const Text(
-              'Dashboard',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16),
-            _buildBannerCarousel(),
-            const SizedBox(height: 16),
-            _buildRestaurantList(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              const Text(
+                'Dashboard',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 16),
+              _buildSearchBar(),
+              const SizedBox(height: 16),
+              _buildBannerCarousel(),
+              const SizedBox(height: 16),
+              _buildRestaurantList(),
+            ],
+          ),
         ),
       ),
     );
@@ -142,6 +147,22 @@ class _HomeScreenState extends State<HomeScreen> {
         }
 
         List<Restaurant> filteredRestaurants = provider.restaurants;
+
+        if (provider.searchQuery.isNotEmpty) {
+          filteredRestaurants = filteredRestaurants
+              .where(
+                (restaurant) => restaurant.name.toLowerCase().contains(
+                  provider.searchQuery.toLowerCase(),
+                ),
+              )
+              .toList();
+        }
+        if (filteredRestaurants.isEmpty) {
+          return const Expanded(
+            child: Center(child: Text('No restaurants found')),
+          );
+        }
+
         return Expanded(
           child: ListView.builder(
             itemCount: filteredRestaurants.length,
@@ -172,7 +193,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
       child: InkWell(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailRestoScreen(id: restaurant.id)));
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailRestoScreen(id: restaurant.id),
+            ),
+          );
         },
         child: Padding(
           padding: const EdgeInsets.all(12),
@@ -253,6 +279,30 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildSearchBar() {
+    return Consumer<RestaurantProvider>(
+      builder: (context, provider, _) {
+        return Container(
+          decoration: BoxDecoration(
+            color: AppTheme.lightGrey.withValues(alpha: 0.5),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: TextField(
+            onChanged: (value) {
+              provider.setSearchQuery(value);
+            },
+            decoration: const InputDecoration(
+              hintText: 'search',
+              prefixIcon: Icon(Icons.search),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.symmetric(vertical: 15),
+            ),
+          ),
+        );
+      },
     );
   }
 }

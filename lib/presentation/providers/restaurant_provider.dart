@@ -25,6 +25,9 @@ class RestaurantProvider extends ChangeNotifier {
   List<BannerItem> _banners = [];
   List<BannerItem> get banners => _banners;
 
+  String _searchQuery = '';
+  String get searchQuery => _searchQuery;
+
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
@@ -85,6 +88,11 @@ class RestaurantProvider extends ChangeNotifier {
         _isLoading = false;
       },
     );
+    notifyListeners();
+  }
+
+  void setSearchQuery(String v){
+    _searchQuery = v; 
     notifyListeners();
   }
 }
