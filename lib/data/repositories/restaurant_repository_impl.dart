@@ -28,13 +28,26 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
       return Left(e.toString());
     }
   }
+
   @override
-  Future<Either<String,Restaurant>> getRestaurantById(int id) async {
+  Future<Either<String, Restaurant>> getRestaurantById(int id) async {
     try {
-      final result = await localDataSource.getRestaurantById( id);
+      final result = await localDataSource.getRestaurantById(id);
       return Right(result);
     } catch (e) {
       return Left(e.toString());
+    }
+  }
+
+  @override
+  Future<Either<String, List<Restaurant>>> getRestaurantsByCity(
+    String city,
+  ) async {
+    try {
+      final result = await localDataSource.getRestaurantsByCity(city);
+      return Right(result);
+    } catch (e) {
+      return left(e.toString());
     }
   }
 }

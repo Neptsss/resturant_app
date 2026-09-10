@@ -8,6 +8,7 @@ abstract class RestaurantLocalDataSource {
   Future<List<RestaurantModel>> getRestaurants();
   Future<List<BannerModel>> getBanners();
   Future<RestaurantModel> getRestaurantById(int id);
+  Future<List<RestaurantModel>> getRestaurantsByCity(String city);
 }
 
 class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
@@ -33,12 +34,11 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
         'assets/data/data.json',
       );
       final data = json.decode(response);
-      final a =  (data['restaurants'] as List).firstWhere((e) => e['id'] == id);
-      if(a == null){
+      final a = (data['restaurants'] as List).firstWhere((e) => e['id'] == id);
+      if (a == null) {
         throw Exception('Restaurant not found');
       }
       return RestaurantModel.fromJson(a);
-
     } catch (e) {
       throw Exception('Failed to load restaurants: $e');
     }
@@ -56,6 +56,22 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
           .toList();
     } catch (e) {
       throw Exception('Failed to load banners');
+    }
+  }
+
+  @override
+  Future<List<RestaurantModel>> getRestaurantsByCity(String city) async {
+    try {
+      final String response = await rootBundle.loadString(
+        'assets/data/data.json',
+      );
+      final data = json.decode(response);
+      return (data['restaurants'] as List)
+          .where((e) => e['city'] == city)
+          .map((e) => RestaurantModel.fromJson(e))
+          .toList();
+    } catch (e) {
+      throw Exception('Failed to load restaurants');
     }
   }
 }

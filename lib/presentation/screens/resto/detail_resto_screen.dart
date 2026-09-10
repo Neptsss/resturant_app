@@ -78,7 +78,7 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
               children: [
                 Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.all( 16),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: AppTheme.white,
                     borderRadius: BorderRadius.circular(20),
@@ -104,9 +104,8 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
   }
 
   Widget _buildRestaurantHeader(Restaurant restaurant) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
           Text(
@@ -195,18 +194,12 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
           ),
 
           const Spacer(),
-          ElevatedButton.icon(
+          TextButton.icon(
             onPressed: () => _openMaps(restaurant),
-            icon: const Icon(Icons.directions, color: Colors.white),
+            icon: const Icon(Icons.directions, color: Colors.blue),
             label: const Text(
               'Visit Resto',
-              style: TextStyle(color: Colors.white),
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
+              style: TextStyle(color: Colors.blue),
             ),
           ),
         ],
@@ -253,7 +246,9 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
 
   Widget _buildMenuList(Restaurant restaurant) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                margin: const EdgeInsets.symmetric(vertical: 10),
+
+      padding: const EdgeInsets.all( 16),
       decoration: BoxDecoration(
         color: AppTheme.white,
         borderRadius: BorderRadius.circular(20),
@@ -263,6 +258,8 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Column(
+             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 'Menu on this restaurant',
@@ -282,7 +279,19 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
             itemBuilder: (context, index) {
               final menuItem = restaurant.menu[index];
               return Container(
-                padding: const EdgeInsets.symmetric(vertical: 8),
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: AppTheme.white,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppTheme.grey.withValues(alpha: 0.5),
+                      blurRadius: 2,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
                 child: Row(
                   children: [
                     ClipRRect(
@@ -404,7 +413,10 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error opening maps : ${e.toString()}'), backgroundColor: Colors.red,),
+          SnackBar(
+            content: Text('Error opening maps : ${e.toString()}'),
+            backgroundColor: Colors.red,
+          ),
         );
       }
     }

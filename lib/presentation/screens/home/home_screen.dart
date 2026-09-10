@@ -52,6 +52,10 @@ class _HomeScreenState extends State<HomeScreen> {
               _buildSearchBar(),
               const SizedBox(height: 16),
               _buildBannerCarousel(),
+              const SizedBox(height: 24),
+              _buildRestaurantHeader(),
+              const SizedBox(height: 8),
+              _buildCityFilter(),
               const SizedBox(height: 16),
               _buildRestaurantList(),
             ],
@@ -127,6 +131,19 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Widget _buildRestaurantHeader() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          "Restaurant",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+       
+      ],
+    );
+  }
+
   Widget _buildRestaurantList() {
     return Consumer<RestaurantProvider>(
       builder: (context, provider, _) {
@@ -178,14 +195,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildRestaurantTile(Restaurant restaurant) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 8),
       decoration: BoxDecoration(
         color: AppTheme.white,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.grey.withValues(alpha: 0.05),
-            blurRadius: 8,
+            color: AppTheme.grey.withValues(alpha: 0.5),
+            blurRadius: 2,
             offset: const Offset(0, 2),
           ),
         ],
@@ -302,6 +319,135 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         );
+      },
+    );
+  }
+
+  Widget _buildCityFilter() {
+    return Consumer<RestaurantProvider>(
+      builder: (context, provider, _) {
+        return Row(
+          children: [
+            Expanded(
+              child: const Text(
+                'Check menu at this restaurant',
+                style: TextStyle(color: Colors.grey, fontSize: 12),
+              ),
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                _showCityFilterDialog(context);
+              },
+              icon: const Icon(Icons.location_on_outlined, size: 16),
+              label: Text(
+                (provider.selectedCity.isEmpty) ? 'All' : provider.selectedCity,
+                style: const TextStyle(fontSize: 14),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                elevation: 1,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  side: BorderSide(color: Colors.grey[300]!),
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            ElevatedButton.icon(
+              onPressed: () {
+                provider.toggleSortType();
+              },
+              icon: Icon(
+                provider.sortType == SortType.nameAsc
+                    ? Icons.arrow_downward
+                    : Icons.arrow_upward,
+                size: 16,
+              ),
+              label: Text('Nama', style: TextStyle(fontSize: 14)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                elevation: 1,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  side: BorderSide(color: Colors.grey[300]!),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showCityFilterDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return CityFilterDialog(
+          onCitySelected: (city) {
+            if (city != null) {
+              Provider.of<RestaurantProvider>(
+                context,
+                listen: false,
+              ).getResturantsByCity(city);
+            } else {
+              Provider.of<RestaurantProvider>(
+                context,
+                listen: false,
+              ).getAllRestaurants();
+            }
+            Navigator.pop(context);
+          },
+          selectedCity: Provider.of<RestaurantProvider>(
+            context,
+            listen: false,
+          ).selectedCity,
+        );
+      },
+    );
+  }
+}
+
+class CityFilterDialog extends StatelessWidget {
+  final Function(String?) onCitySelected;
+  final String? selectedCity;
+
+  const CityFilterDialog({
+    super.key,
+    required this.onCitySelected,
+    this.selectedCity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Filter by City'),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _buildCityTile(context, null, 'All Cities'),
+            _buildCityTile(context, 'Jakarta', 'Jakarta'),
+            _buildCityTile(context, 'Yogyakarta', 'Yogyakarta'),
+            _buildCityTile(context, 'Bandung', 'Bandung'),
+            _buildCityTile(context, 'Surabaya', 'Surabaya'),
+            _buildCityTile(context, 'Bali', 'Bali'),
+            _buildCityTile(context, 'Makassar', 'Makassar'),
+            _buildCityTile(context, 'Medan', 'Medan'),
+            _buildCityTile(context, 'Malang', 'Malang'),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCityTile(BuildContext context, String? city, String label) {
+    return ListTile(
+      title: Text(label),
+      onTap: () {
+        onCitySelected(city);
       },
     );
   }
