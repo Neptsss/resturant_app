@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
 import 'package:restaurant_app/presentation/screens/booking/booking_list_screen.dart';
 import 'package:restaurant_app/presentation/screens/home/home_screen.dart';
+import 'package:restaurant_app/presentation/screens/profile/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -13,7 +14,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _screens = [const HomeScreen(), const BookingListScreen()];
+  final List<Widget> _screens = [const HomeScreen(), const BookingListScreen(), const ProfileScreen()];
 
   void _onItemTapped(int index) {
     setState(() {

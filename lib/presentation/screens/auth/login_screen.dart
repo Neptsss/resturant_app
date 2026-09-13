@@ -5,7 +5,7 @@ import 'package:restaurant_app/core/animations/slide_animation.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
 import 'package:restaurant_app/presentation/providers/auth_providers.dart';
 import 'package:restaurant_app/presentation/screens/auth/forgot_password_screen.dart';
-import 'package:restaurant_app/presentation/screens/home/home_screen.dart';
+import 'package:restaurant_app/presentation/screens/home/main_screen.dart';
 import 'package:restaurant_app/presentation/widgets/custom_button.dart';
 import 'package:restaurant_app/presentation/widgets/custom_form.dart';
 
@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
         if (mounted) {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => HomeScreen()),
+            MaterialPageRoute(builder: (context) => MainScreen()),
             (route) => false,
           );
         }
