@@ -53,18 +53,26 @@ The application uses Firebase for the following purposes:
 
 Here are some screenshots of the application:
 
-* Welcome 
-  
-  ![Welcome Screen](assets/images/welcome_screen.png)
+### Welcome
 
-* Restaurant List
-  
-  ![Restaurant List](assets/images/resto_list.png)
+<p align="center">
+  <img src="assets/images/welcome_screen.png" width="250">
+</p>
 
-* Restaurant Detai
-  
-  ![Restaurant Detail](assets/images/detail_resto.png)
+### Restaurant List
 
-* Booking List
+<p align="center">
+  <img src="assets/images/resto_list.png" width="250">
+</p>
 
-  ![Booking List](assets/images/booking_list.png.png)
+### Restaurant Detail
+
+<p align="center">
+  <img src="assets/images/detail_resto.png" width="250">
+</p>
+
+### Booking List
+
+<p align="center">
+  <img src="assets/images/booking_list.png" width="250">
+</p>
