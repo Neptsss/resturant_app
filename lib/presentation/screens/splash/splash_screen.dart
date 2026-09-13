@@ -5,6 +5,7 @@ import 'package:restaurant_app/core/animations/slide_animation.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
 import 'package:restaurant_app/presentation/providers/auth_providers.dart';
 import 'package:restaurant_app/presentation/screens/home/home_screen.dart';
+import 'package:restaurant_app/presentation/screens/home/main_screen.dart';
 import 'package:restaurant_app/presentation/screens/welcome/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(
         builder: (context) =>
-        isLoggedIn ? HomeScreen() :
+        isLoggedIn ? MainScreen() :
          WelcomeScreen(),
       ),
       (route) => false,

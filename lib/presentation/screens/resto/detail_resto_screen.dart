@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
 import 'package:restaurant_app/domain/entities/restaurant.dart';
 import 'package:restaurant_app/presentation/providers/restaurant_provider.dart';
-import 'package:restaurant_app/presentation/screens/resto/booking_screen.dart';
+import 'package:restaurant_app/presentation/screens/booking/booking_screen.dart';
 import 'package:restaurant_app/presentation/widgets/custom_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -246,9 +246,9 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
 
   Widget _buildMenuList(Restaurant restaurant) {
     return Container(
-                margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
 
-      padding: const EdgeInsets.all( 16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppTheme.white,
         borderRadius: BorderRadius.circular(20),
@@ -258,7 +258,7 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Column(
-             crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
@@ -374,7 +374,10 @@ class _DetailRestoScreenState extends State<DetailRestoScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => BookingScreen()),
+                MaterialPageRoute(
+                  builder: (context) =>
+                      BookingScreen(restaurant: provider.selectedRestaurant!),
+                ),
               );
             },
           ),

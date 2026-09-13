@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/constants/app_theme.dart';
 import 'package:restaurant_app/firebase_options.dart';
 import 'package:restaurant_app/presentation/providers/auth_providers.dart';
+import 'package:restaurant_app/presentation/providers/booking_provider.dart';
 import 'package:restaurant_app/presentation/providers/restaurant_provider.dart';
 import 'package:restaurant_app/presentation/screens/splash/splash_screen.dart';
 import 'core/di/service_locator.dart' as di;
@@ -28,6 +29,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => di.serviceLocator<RestaurantProvider>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.serviceLocator<BookingProvider>(),
         ),
       ],
       child: MaterialApp(

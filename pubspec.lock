@@ -57,6 +57,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.2"
+  cloud_firestore:
+    dependency: "direct main"
+    description:
+      name: cloud_firestore
+      sha256: "2d33da4465bdb81b6685c41b535895065adcb16261beb398f5f3bbc623979e9c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.6.12"
+  cloud_firestore_platform_interface:
+    dependency: transitive
+    description:
+      name: cloud_firestore_platform_interface
+      sha256: "413c4e01895cf9cb3de36fa5c219479e06cd4722876274ace5dfc9f13ab2e39b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.6.12"
+  cloud_firestore_web:
+    dependency: transitive
+    description:
+      name: cloud_firestore_web
+      sha256: c1e30fc4a0fcedb08723fb4b1f12ee4e56d937cbf9deae1bda43cbb6367bb4cf
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.4.12"
   code_assets:
     dependency: transitive
     description:
@@ -257,13 +281,13 @@ packages:
     source: hosted
     version: "4.1.2"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
-      sha256: "1ca20c894b1717686a2319b8548763d812bc0aabdac580420a44c5178c57a867"
+      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
       url: "https://pub.dev"
     source: hosted
-    version: "0.20.3"
+    version: "0.19.0"
   jni:
     dependency: transitive
     description:
@@ -496,6 +520,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.1"
+  pull_to_refresh:
+    dependency: "direct main"
+    description:
+      name: pull_to_refresh
+      sha256: bbadd5a931837b57739cf08736bea63167e284e71fb23b218c8c9a6e042aad12
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   record_use:
     dependency: transitive
     description:
@@ -702,7 +734,7 @@ packages:
     source: hosted
     version: "3.1.6"
   uuid:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: uuid
       sha256: "9b129329f58692f6e6578329498a8fe9fbe98f090beb764ffbb8ee2eadd01dcd"
